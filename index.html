@@ -149,15 +149,12 @@ section{padding-block:80px}
 .case .info ul{margin:0;padding-left:1.1em;color:var(--muted);display:grid;gap:4px;font-size:.96rem}
 .case .info a{font-weight:600;color:var(--cobalt);text-decoration:none;word-break:break-word}
 .case .info a:hover{text-decoration:underline}
-/* marco del QR con los colores de cada landing: --brand (fondo), --brand-ink (título), --brand-line (borde) */
-.qrcard{--brand:#0E1230;--brand-ink:#FFFFFF;--brand-line:#FFCF33;background:var(--brand);border:3px solid var(--brand-line);border-radius:20px;padding:14px 14px 12px;display:grid;gap:10px;justify-items:center;box-shadow:0 14px 30px -18px rgba(0,0,0,.55)}
-.qrcard .qt{font:800 1.45rem/1 var(--f-display);letter-spacing:-.01em;color:var(--brand-ink);text-align:center}
-.qrcard .q{background:#FFFFFF;border-radius:12px;padding:10px}
-.qrcard .q img,.qrcard .q canvas{width:200px!important;height:200px!important;display:block}
-.qrcard .qs{font:500 .68rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);opacity:.9}
-@media (max-width:1000px){.case{grid-template-columns:170px 1fr 230px;gap:22px}.qrcard .q img,.qrcard .q canvas{width:180px!important;height:180px!important}}
-@media (max-width:860px){.case{grid-template-columns:150px 1fr}.case .qrcard{grid-column:1/-1;justify-self:center;width:min(300px,100%)}.qrcard .q img,.qrcard .q canvas{width:220px!important;height:220px!important}}
-@media (max-width:480px){.case{grid-template-columns:1fr}.case .vbox{max-width:220px}.qrcard .q img,.qrcard .q canvas{width:min(220px,58vw)!important;height:min(220px,58vw)!important}}
+/* QR de cada guía: imagen con marco y título en los colores de su landing */
+.qrcard{margin:0;display:block;width:100%;max-width:260px;justify-self:end}
+.qrcard img{display:block;width:100%;height:auto;aspect-ratio:1104/1284;border-radius:16px;box-shadow:0 16px 32px -20px rgba(0,0,0,.6)}
+@media (max-width:1000px){.case{grid-template-columns:170px 1fr 230px;gap:22px}}
+@media (max-width:860px){.case{grid-template-columns:150px 1fr}.case .qrcard{grid-column:1/-1;justify-self:center;max-width:300px}}
+@media (max-width:480px){.case{grid-template-columns:1fr}.case .vbox{max-width:220px}.case .qrcard{max-width:min(300px,100%)}}
 
 /* proceso */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s;list-style:none;margin:0;padding:0}
@@ -234,7 +231,7 @@ details p{color:var(--muted);padding-bottom:16px}
       <div class="chips" aria-label="Formatos">
         <span class="chip">Reels y TikTok 9:16</span>
         <span class="chip">QR para stickers y empaques</span>
-        <span class="chip">Sin pagar hosting mensual</span>
+        <span class="chip">Guía activa todo el año</span>
       </div>
     </div>
 
@@ -310,6 +307,7 @@ details p{color:var(--muted);padding-bottom:16px}
             <li>Guion con los pasos clave de tu producto</li>
             <li>Narración y subtítulos en español</li>
             <li>Ves las imágenes base antes de animarlas</li>
+            <li>Pago único: el video queda siendo tuyo</li>
           </ul>
           <div class="foot"><a class="wa-link" data-msg="Hola, quiero cotizar un video vertical para mi producto." href="https://wa.me/573011790223" target="_blank" rel="noopener">Cotizar video →</a></div>
         </article>
@@ -321,7 +319,7 @@ details p{color:var(--muted);padding-bottom:16px}
             <li>Cómo se usa, beneficios, ingredientes y precauciones</li>
             <li>Preguntas frecuentes y botón a tu WhatsApp</li>
             <li>QR en alta calidad para imprimir</li>
-            <li>Publicada sin costo mensual de hosting</li>
+            <li>Plan anual: tu guía activa los 12 meses</li>
           </ul>
           <div class="foot"><a class="wa-link" data-msg="Hola, quiero cotizar una guía web con QR para mi producto." href="https://wa.me/573011790223" target="_blank" rel="noopener">Cotizar guía →</a></div>
         </article>
@@ -386,7 +384,7 @@ details p{color:var(--muted);padding-bottom:16px}
             </ul>
             <a href="https://marketingjmq.github.io/ilivit/" target="_blank" rel="noopener">marketingjmq.github.io/ilivit</a>
           </div>
-          <div class="qrcard" style="--brand:#0F2719;--brand-ink:#A6E83A;--brand-line:#A6E83A"><span class="qt">ILÍVIT</span><div class="q" data-qr="https://marketingjmq.github.io/ilivit/" role="img" aria-label="Código QR de la guía ILÍVIT"></div><span class="qs">Escanea la guía</span></div>
+          <figure class="qrcard"><img src="qr/qr-ilivit.png" width="1104" height="1284" loading="lazy" alt="Código QR de la Guía ILÍVIT: escanéalo con la cámara de tu celular"></figure>
         </article>
         <article class="case">
           <div class="vbox"><video src="casos/ipolix.mp4" poster="casos/ipolix.jpg" muted loop playsinline preload="metadata" controls></video><div class="fallback" hidden>IPOLIX</div></div>
@@ -400,7 +398,7 @@ details p{color:var(--muted);padding-bottom:16px}
             </ul>
             <a href="https://marketingjmq.github.io/ipolix/" target="_blank" rel="noopener">marketingjmq.github.io/ipolix</a>
           </div>
-          <div class="qrcard" style="--brand:#1E0038;--brand-ink:#FF7800;--brand-line:#FF7800"><span class="qt">IPOLIX</span><div class="q" data-qr="https://marketingjmq.github.io/ipolix/" role="img" aria-label="Código QR de la guía IPOLIX"></div><span class="qs">Escanea la guía</span></div>
+          <figure class="qrcard"><img src="qr/qr-ipolix.png" width="1104" height="1284" loading="lazy" alt="Código QR de la Guía IPOLIX: escanéalo con la cámara de tu celular"></figure>
         </article>
         <article class="case">
           <div class="vbox"><video src="casos/fueradol.mp4" poster="casos/fueradol.jpg" muted loop playsinline preload="metadata" controls></video><div class="fallback" hidden>FUERADOL</div></div>
@@ -414,7 +412,7 @@ details p{color:var(--muted);padding-bottom:16px}
             </ul>
             <a href="https://marketingjmq.github.io/fueradol/" target="_blank" rel="noopener">marketingjmq.github.io/fueradol</a>
           </div>
-          <div class="qrcard" style="--brand:#D7262D;--brand-ink:#FFFFFF;--brand-line:#F2B51D"><span class="qt">FUERADOL</span><div class="q" data-qr="https://marketingjmq.github.io/fueradol/" role="img" aria-label="Código QR de la guía FUERADOL"></div><span class="qs">Escanea la guía</span></div>
+          <figure class="qrcard"><img src="qr/qr-fueradol.png" width="1104" height="1284" loading="lazy" alt="Código QR de la Guía FUERADOL: escanéalo con la cámara de tu celular"></figure>
         </article>
       </div>
     </div>
@@ -455,8 +453,8 @@ details p{color:var(--muted);padding-bottom:16px}
         <h2 id="t-faq">Lo que suelen preguntar.</h2>
       </div>
       <div class="faq">
-        <details><summary>¿Necesito tener página web o dominio?</summary><p>No. La guía se publica en un enlace propio y gratuito. Si después quieres tu dominio, se puede conectar.</p></details>
-        <details><summary>¿Tengo que pagar algo cada mes?</summary><p>No hay pago mensual de hosting. La guía queda publicada en un servicio gratuito y estable.</p></details>
+        <details><summary>¿Qué necesito para tener mi guía?</summary><p>Solo la información de tu producto: fotos, cómo se usa y lo que más te preguntan tus clientes. Yo me encargo del resto y te entrego el enlace y el QR listos para compartir.</p></details>
+        <details><summary>¿Cómo se paga?</summary><p>La guía web con QR tiene un plan anual: un solo pago al año que la mantiene activa los 12 meses. Los videos se pagan una sola vez y quedan siendo tuyos para siempre.</p></details>
         <details><summary>Si cambio un dato del producto, ¿tengo que imprimir otro QR?</summary><p>No. El QR apunta siempre al mismo enlace; se actualiza la página y los stickers impresos siguen funcionando.</p></details>
         <details><summary>¿El video lo hago yo o me lo entregan listo?</summary><p>Te lo entrego listo para subir: vertical, con narración y subtítulos en español. También puedes pedir solo los clips para editarlos tú.</p></details>
         <details><summary>¿Necesito un estudio o fotos profesionales?</summary><p>No. Con fotos de celular del producto basta. Las escenas se generan con inteligencia artificial y tú apruebas cada imagen antes de animarla.</p></details>
