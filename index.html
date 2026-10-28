@@ -141,7 +141,7 @@ section{padding-block:80px}
 
 /* casos */
 .cases{display:grid;gap:20px}
-.case{display:grid;grid-template-columns:200px 1fr 170px;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.case{display:grid;grid-template-columns:200px 1fr 250px;gap:28px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
 .case>*{min-width:0}
 .case .vbox{aspect-ratio:9/16}
 .case .info{display:grid;gap:10px}
@@ -149,11 +149,15 @@ section{padding-block:80px}
 .case .info ul{margin:0;padding-left:1.1em;color:var(--muted);display:grid;gap:4px;font-size:.96rem}
 .case .info a{font-weight:600;color:var(--cobalt);text-decoration:none;word-break:break-word}
 .case .info a:hover{text-decoration:underline}
-.qrcard{background:#fff;border-radius:12px;padding:12px;display:grid;gap:8px;justify-items:center;border:1px solid var(--line)}
-.qrcard .q img,.qrcard .q canvas{width:140px!important;height:140px!important;display:block}
-.qrcard span{font:500 .66rem var(--f-mono);letter-spacing:.05em;text-transform:uppercase;color:#3b3f58}
-@media (max-width:860px){.case{grid-template-columns:150px 1fr}.case .qrcard{grid-column:1/-1;justify-self:start;grid-template-columns:auto 1fr;align-items:center;justify-items:start}.qrcard .q img,.qrcard .q canvas{width:110px!important;height:110px!important}}
-@media (max-width:480px){.case{grid-template-columns:1fr}.case .vbox{max-width:220px}}
+/* marco del QR con los colores de cada landing: --brand (fondo), --brand-ink (título), --brand-line (borde) */
+.qrcard{--brand:#0E1230;--brand-ink:#FFFFFF;--brand-line:#FFCF33;background:var(--brand);border:3px solid var(--brand-line);border-radius:20px;padding:14px 14px 12px;display:grid;gap:10px;justify-items:center;box-shadow:0 14px 30px -18px rgba(0,0,0,.55)}
+.qrcard .qt{font:800 1.45rem/1 var(--f-display);letter-spacing:-.01em;color:var(--brand-ink);text-align:center}
+.qrcard .q{background:#FFFFFF;border-radius:12px;padding:10px}
+.qrcard .q img,.qrcard .q canvas{width:200px!important;height:200px!important;display:block}
+.qrcard .qs{font:500 .68rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--brand-ink);opacity:.9}
+@media (max-width:1000px){.case{grid-template-columns:170px 1fr 230px;gap:22px}.qrcard .q img,.qrcard .q canvas{width:180px!important;height:180px!important}}
+@media (max-width:860px){.case{grid-template-columns:150px 1fr}.case .qrcard{grid-column:1/-1;justify-self:center;width:min(300px,100%)}.qrcard .q img,.qrcard .q canvas{width:220px!important;height:220px!important}}
+@media (max-width:480px){.case{grid-template-columns:1fr}.case .vbox{max-width:220px}.qrcard .q img,.qrcard .q canvas{width:min(220px,58vw)!important;height:min(220px,58vw)!important}}
 
 /* proceso */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s;list-style:none;margin:0;padding:0}
@@ -382,7 +386,7 @@ details p{color:var(--muted);padding-bottom:16px}
             </ul>
             <a href="https://marketingjmq.github.io/ilivit/" target="_blank" rel="noopener">marketingjmq.github.io/ilivit</a>
           </div>
-          <div class="qrcard"><div class="q" data-qr="https://marketingjmq.github.io/ilivit/" role="img" aria-label="Código QR de la guía ILÍVIT"></div><span>Escanea · ILÍVIT</span></div>
+          <div class="qrcard" style="--brand:#0F2719;--brand-ink:#A6E83A;--brand-line:#A6E83A"><span class="qt">ILÍVIT</span><div class="q" data-qr="https://marketingjmq.github.io/ilivit/" role="img" aria-label="Código QR de la guía ILÍVIT"></div><span class="qs">Escanea la guía</span></div>
         </article>
         <article class="case">
           <div class="vbox"><video src="casos/ipolix.mp4" poster="casos/ipolix.jpg" muted loop playsinline preload="metadata" controls></video><div class="fallback" hidden>IPOLIX</div></div>
@@ -396,7 +400,7 @@ details p{color:var(--muted);padding-bottom:16px}
             </ul>
             <a href="https://marketingjmq.github.io/ipolix/" target="_blank" rel="noopener">marketingjmq.github.io/ipolix</a>
           </div>
-          <div class="qrcard"><div class="q" data-qr="https://marketingjmq.github.io/ipolix/" role="img" aria-label="Código QR de la guía IPOLIX"></div><span>Escanea · IPOLIX</span></div>
+          <div class="qrcard" style="--brand:#1E0038;--brand-ink:#FF7800;--brand-line:#FF7800"><span class="qt">IPOLIX</span><div class="q" data-qr="https://marketingjmq.github.io/ipolix/" role="img" aria-label="Código QR de la guía IPOLIX"></div><span class="qs">Escanea la guía</span></div>
         </article>
         <article class="case">
           <div class="vbox"><video src="casos/fueradol.mp4" poster="casos/fueradol.jpg" muted loop playsinline preload="metadata" controls></video><div class="fallback" hidden>FUERADOL</div></div>
@@ -410,7 +414,7 @@ details p{color:var(--muted);padding-bottom:16px}
             </ul>
             <a href="https://marketingjmq.github.io/fueradol/" target="_blank" rel="noopener">marketingjmq.github.io/fueradol</a>
           </div>
-          <div class="qrcard"><div class="q" data-qr="https://marketingjmq.github.io/fueradol/" role="img" aria-label="Código QR de la guía FUERADOL"></div><span>Escanea · FUERADOL</span></div>
+          <div class="qrcard" style="--brand:#D7262D;--brand-ink:#FFFFFF;--brand-line:#F2B51D"><span class="qt">FUERADOL</span><div class="q" data-qr="https://marketingjmq.github.io/fueradol/" role="img" aria-label="Código QR de la guía FUERADOL"></div><span class="qs">Escanea la guía</span></div>
         </article>
       </div>
     </div>
